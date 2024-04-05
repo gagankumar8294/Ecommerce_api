@@ -24,6 +24,12 @@ export default class productController {
     }
 
     getOneProduct(req, res){
-        
+        const id = req.params.id;
+        const product = ProductModel.get(id);
+        if(!product){
+            res.status(404).send('product not found');
+        } else {
+            return res.status(200).send(product); 
+        }
     }
 }

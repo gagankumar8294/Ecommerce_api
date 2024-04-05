@@ -10,8 +10,7 @@ import { upload } from '../../middlewares/fileupload.middleware.js'
 const productController = new ProductController();
 
 ProductRouter.get('/', productController.getAllProducts);
-ProductRouter.post('/', 
-upload.single('imageUrl'),
- productController.addProduct);
+ProductRouter.post('/', upload.single('imageUrl'), productController.addProduct);
+ProductRouter.get('/:id', productController.getOneProduct);
 
 export default ProductRouter;
