@@ -1,0 +1,7 @@
+Products:- creating Api's in ProductController
+
+Get Products
+Add Products
+Get one Products
+Rate Product
+Filter Product
