@@ -1,7 +1,14 @@
 Products:- creating Api's in ProductController
 
-Get Products
-Add Products
-Get one Products
-Rate Product
+Get Products - Done
+Add Products - Done
+Get one Products - Done
+Rate Product - Done
 Filter Product
+
+
+
+USER CONTROLLER
+
+signup - Email, Name, Password, TypeofUser(customer, seller)
+signin - (Email, Password)
