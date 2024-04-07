@@ -8,6 +8,7 @@ const ProductRouter = express.Router();
 import { upload } from '../../middlewares/fileupload.middleware.js'
 
 const productController = new ProductController();
+ProductRouter.get('/filter', productController.filterProducts);
 
 ProductRouter.post('/rate', productController.rateProduct);
 ProductRouter.get('/', productController.getAllProducts);

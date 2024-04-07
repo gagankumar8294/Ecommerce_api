@@ -10,7 +10,7 @@ export default class productController {
     addProduct(req, res){
         const { name , price , sizes, } = req.body;
         const newProduct = {
-            name, 
+            name: name, 
             price:parseFloat(price),
             sizes: sizes.split(','),
             imageUrl: req.file.filename,
@@ -43,5 +43,17 @@ export default class productController {
         } else {
             return res.status(200).send(product); 
         }
+    }
+
+    // Filter products
+    filterProducts(req, res) {
+        const minPrice = req.query.minPrice;
+        const maxPrice = req.query.maxPrice;
+        const category = req.query.category;
+        const product = ProductModel.filter(minPrice, maxPrice , category);
+        
+        
+            res.status(200).send(product);
+    
     }
 }

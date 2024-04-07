@@ -6,18 +6,19 @@ export default class ProductModel {
         id,
         name,
         desc,
-        imageUrl,
-        catagory,
         price,
+        imageUrl,
+        category,
         sizes
     ) {
         // initialize all these properties
         this.id = id;
         this.name = name;
         this.desc = desc;
-        this.imageUrl = imageUrl;
-        this.catagory = catagory;
         this.price = price;
+        this.imageUrl = imageUrl;
+        this.category = category;
+        
         this.sizes = sizes;
     }
 
@@ -34,6 +35,27 @@ export default class ProductModel {
 
     static getAll() {
         return products;
+    }
+
+    // Filter
+    static filter(minPrice, maxPrice, category) {
+      // Vennila Javascript
+      const result = products.filter( (product) => {
+        return (
+          product.price >= minPrice &&
+          product.price <= maxPrice &&
+          product.category == category
+          // to adjust price
+          // (!minPrice ||
+          //   product.price >= minPrice &&
+          //   (!maxPrice || 
+          //     product.price <= maxPrice) &&
+          //     (!category ||
+          //       product.category == category)
+          //     )
+      );
+      });
+      return result;
     }
 
     static rateProduct(userID, productId, rating) {
@@ -89,7 +111,7 @@ var products = [
       'Description for Product 1',
       19.99,
       'https://m.media-amazon.com/images/I/51-nXsSRfZL._SX328_BO1,204,203,200_.jpg',
-      'Cateogory1'
+      'Category1'
     ),
     new ProductModel(
       2,
