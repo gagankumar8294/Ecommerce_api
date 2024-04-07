@@ -9,7 +9,9 @@ const server = express();
 server.use(bodyParser.json())
 
 // for all requests related to products, redirect to product routes.
-server.use('/api/products', jwtAuth, productRouter);
+server.use('/api/products',
+    //  jwtAuth, 
+     productRouter);
 server.use('/api/users', userRouter);
 
 
