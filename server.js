@@ -10,7 +10,7 @@ server.use(bodyParser.json())
 
 // for all requests related to products, redirect to product routes.
 server.use('/api/products',
-    //  jwtAuth, 
+     jwtAuth, 
      productRouter);
 server.use('/api/users', userRouter);
 

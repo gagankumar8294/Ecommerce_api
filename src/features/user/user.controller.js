@@ -15,7 +15,7 @@ export default class UserController {
             return res.status(400).send('Incorrect credentials');
         } else {
 
-            // create token
+            // 1. create token
             const token = Jwt.sign(
                 {
                     userID: result.id,
@@ -27,7 +27,7 @@ export default class UserController {
                 }
             )
 
-            // Send token
+            // 2. Send token
             return res.status(200).send(token);
         }
     }

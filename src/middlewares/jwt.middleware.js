@@ -20,13 +20,10 @@ const jwtAuth = (req, res, next) => {
         next();
     } catch (err) {
         console.log(err);
-    //4 call next middleware
+    // retuen error
         return res.status(401).send('Unauthorized')
     }
-
-    
-
-    //5.return error
+    //4 call next middleware
     next();
 }
 
