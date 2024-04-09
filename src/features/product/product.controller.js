@@ -20,7 +20,7 @@ export default class productController {
     }
 
     rateProduct(req, res){
-        console.log(req.query);
+  
         const userID = req.query.userID;
         const productID = req.query.productID;
         const rating = req.query.rating;

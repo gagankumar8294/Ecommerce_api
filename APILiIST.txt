@@ -4,11 +4,16 @@ Get Products - Done
 Add Products - Done
 Get one Products - Done
 Rate Product - Done
-Filter Product
+Filter Product - Done
+
+Rate Product - Done
+Add items to Cart - Done
+Get items to Cart - Done
+Remove items from Cart - Done
 
 
 
 USER CONTROLLER
 
-signup - Email, Name, Password, TypeofUser(customer, seller)
-signin - (Email, Password)
+signup - Email, Name, Password, TypeofUser(customer, seller) - Done
+signin - (Email, Password) - Done
