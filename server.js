@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import jwtAuth from "./src/middlewares/jwt.middleware.js";
 import cartRouter from "./src/features/cartitems/cartitems.routes.js";
 import loggerMiddleware from "./src/middlewares/logger.middleware.js";
+import { ApplicationError } from "./src/error-handler/applicationError.js";
 
 // Crate Server
 const server = express();
@@ -20,6 +21,14 @@ server.use('/api/cart', jwtAuth, cartRouter);
 
 server.get("/", (req, res) => {
     res.send("Welcome to Ecommerce Api");
+})
+
+server.use((err, req, res, next) => {
+    console.log(err);
+    if(err instanceof ApplicationError){
+        res.status(err.code).send(err.message);
+    }
+    res.status(500).send('Something went wrong, Please try later');
 })
 
 // Middleware to Handle 404 requests

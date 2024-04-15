@@ -1,3 +1,4 @@
+import { ApplicationError } from "../../error-handler/applicationError.js";
 import UserModel from "../user/user.model.js";
 
 export default class ProductModel {
@@ -64,7 +65,7 @@ export default class ProductModel {
         (u) => u.id == userID
       );
       if(!user) {
-        throw new Error('User not found');
+        throw new ApplicationError('User not found' , 404);
       }
 
       // 2. Validate Product
@@ -72,7 +73,7 @@ export default class ProductModel {
         (p) => p.id == productId
       );
       if(!product) {
-        throw new Error('Product not found');
+        throw new ApplicationError('Product not found', 404);
       }
 
       // 3. Check if there are any rating & if not Add ratings Array
