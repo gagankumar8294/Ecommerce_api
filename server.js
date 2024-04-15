@@ -13,13 +13,14 @@ server.use(bodyParser.json())
 // for all requests related to products, redirect to product routes.
 server.use('/api/products',jwtAuth, productRouter);
 server.use('/api/users', userRouter);
-server.use('/api/cart', jwtAuth, cartRouter)
+server.use('/api/cart', jwtAuth, cartRouter);
 
 server.get("/", (req, res) => {
     res.send("Welcome to Ecommerce Api");
 })
 
 
-server.listen(3200);
+server.listen( 3200, () => {
+    console.log("server listenig on port http://localhost:3200");
+});
 
-console.log("server listenig on port http://localhost:3200");
