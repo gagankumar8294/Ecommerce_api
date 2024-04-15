@@ -5,10 +5,13 @@ import bodyParser from "body-parser";
 // import basicAuthorizer from "./src/middlewares/basicAuth.middleware.js"
 import jwtAuth from "./src/middlewares/jwt.middleware.js";
 import cartRouter from "./src/features/cartitems/cartitems.routes.js";
+import loggerMiddleware from "./src/middlewares/logger.middleware.js";
 
 // Crate Server
 const server = express();
 server.use(bodyParser.json())
+
+server.use(loggerMiddleware);
 
 // for all requests related to products, redirect to product routes.
 server.use('/api/products',jwtAuth, productRouter);
