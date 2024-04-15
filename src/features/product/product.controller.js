@@ -30,7 +30,7 @@ export default class productController {
                 userID, productID, rating
             );
         } catch (err) {
-            return res.status(400).send(err);
+            return res.status(400).send(err.message);
         } 
         return res.status(200).send('Rating has been updated successfully');
     }
