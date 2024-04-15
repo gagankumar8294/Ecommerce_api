@@ -2,3 +2,5 @@
 {"level":"info","message":"/api/users/signin - {\"email\":\"seller@example.com\",\"password\":\"password\"}","service":"request-logging"}
 {"level":"info","message":"/api/users/signin Mon Apr 15 2024 15:10:42 GMT+0530 (India Standard Time) - {\"email\":\"seller@example.com\",\"password\":\"password\"}","service":"request-logging"}
 {"level":"info","message":"Mon Apr 15 2024 15:11:37 GMT+0530 (India Standard Time) /api/users/signin - {\"email\":\"seller@example.com\",\"password\":\"password\"}","service":"request-logging"}
+{"level":"info","message":"Mon Apr 15 2024 15:39:51 GMT+0530 (India Standard Time) /api/products/?userID=1&productID=1&rating=4.5 - {}","service":"request-logging"}
+{"level":"info","message":"Mon Apr 15 2024 15:40:25 GMT+0530 (India Standard Time) /api/products/rate?userID=1&productID=1&rating=4.5 - {}","service":"request-logging"}
