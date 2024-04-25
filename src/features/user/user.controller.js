@@ -8,14 +8,14 @@ export default class UserController {
         this.userRepository = new UserRepository();
     }
     
-    async signUp(req, res, next) {
+    async signUp(req, res) {
         const { name, email, password, type, } = req.body;
         const user = new UserModel(name, email, password, type,);
         await this.userRepository.signUp(user);
         res.status(201).send(user)
     }
  
-    async signIn(req, res) {
+    async signIn(req, res, next) {
         try {
         const result = await this.userRepository.signIn(req.body.email, req.body.password);
         if(!result){

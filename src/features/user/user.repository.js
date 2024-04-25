@@ -29,7 +29,7 @@ class UserRepository {
         const collection = db.collection("users");
 
         // 3. Find the document
-        return await collection.findOne(email, password);
+        return await collection.findOne({email, password});
         } catch(err) {
             console.log(err);
             throw new ApplicationError("Something went Wrong with database", 500);
