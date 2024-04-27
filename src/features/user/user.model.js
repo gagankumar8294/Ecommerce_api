@@ -1,6 +1,3 @@
-import { getDB } from "../../config/mongodb.js";
-import { ApplicationError } from "../../error-handler/applicationError.js";
-
 export default class UserModel {
 
     constructor(name, email, password, type, id) {
