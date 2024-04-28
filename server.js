@@ -1,3 +1,5 @@
+import './env.js';
+
 import  express  from "express";
 import  productRouter  from './src/features/product/products.routes.js'
 import userRouter from "./src/features/user/user.routes.js";

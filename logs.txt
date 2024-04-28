@@ -39,3 +39,8 @@
 {"level":"info","message":"Fri Apr 26 2024 13:03:50 GMT+0530 (India Standard Time) /api/users/signup - {\"email\":\"seller4@gmail.com\",\"password\":\"Password4\",\"name\":\"Seller User4\",\"type\":\"seller\"}","service":"request-logging"}
 {"level":"info","message":"Fri Apr 26 2024 13:04:17 GMT+0530 (India Standard Time) /api/users/signin - {\"email\":\"seller4@gmail.com\",\"password\":\"Password4\"}","service":"request-logging"}
 >>>>>>> mongodb
+{"level":"info","message":"Sun Apr 28 2024 15:55:42 GMT+0530 (India Standard Time) /api/users/signup - {\"name\":\"gagan\",\"email\":\"gagankumar8294@gmail.com\",\"password\":12345,\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"Sun Apr 28 2024 15:56:14 GMT+0530 (India Standard Time) /api/users/signin - {\"email\":\"gagankumar8294@gmail.com\",\"password\":12345}","service":"request-logging"}
+{"level":"info","message":"Sun Apr 28 2024 15:56:23 GMT+0530 (India Standard Time) /api/users/signin - {\"email\":\"gagankumar8294@gmail.com\",\"password\":12345}","service":"request-logging"}
+{"level":"info","message":"Sun Apr 28 2024 15:59:23 GMT+0530 (India Standard Time) /api/users/signup - {\"name\":\"gagan\",\"email\":\"gagankumar8293@gmail.com\",\"password\":12345,\"type\":\"seller\"}","service":"request-logging"}
+{"level":"info","message":"Sun Apr 28 2024 15:59:38 GMT+0530 (India Standard Time) /api/users/signin - {\"email\":\"gagankumar8293@gmail.com\",\"password\":12345}","service":"request-logging"}
