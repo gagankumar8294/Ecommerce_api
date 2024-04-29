@@ -8,8 +8,12 @@ const storage = multer.diskStorage({
         cb(null, './uploads/');
     },
     filename: (req, file, cb) => {
-        const name = Date.now() + '-' + file.originalname;
-        cb(null, name);
+        if (file) {
+            const name = Date.now() + '-' + file.originalname;
+            cb(null, name);
+        } else {
+            cb(new Error('File Object is undefined'), null);
+        }
     },
 });
 

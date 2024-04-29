@@ -11,14 +11,16 @@ import loggerMiddleware from "./src/middlewares/logger.middleware.js";
 import { ApplicationError } from "./src/error-handler/applicationError.js";
 import { connectToMongoDB } from "./src/config/mongodb.js";
 
+
 // Crate Server
 const server = express();
+server.use(express.json());
 server.use(bodyParser.json())
 
 server.use(loggerMiddleware);
 
 // for all requests related to products, redirect to product routes.
-server.use('/api/products',jwtAuth, productRouter);
+server.use('/api/products', productRouter);
 server.use('/api/users', userRouter);
 server.use('/api/cart', jwtAuth, cartRouter);
 

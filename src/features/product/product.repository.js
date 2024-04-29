@@ -1,6 +1,8 @@
-import { getDB } from "../../config/mongodb";
+import { ObjectId } from 'mongodb';
+import { getDB } from "../../config/mongodb.js";
+import { ApplicationError } from '../../error-handler/applicationError.js'
 
-class ProductRepository {
+ class ProductRepository {
 
     // to aviod the hardcoding the 'products' use constructor
     constructor() {
@@ -8,20 +10,44 @@ class ProductRepository {
     }
 
     async add(newProduct) {
-        // 1, Get the DB
-        const db = getDB();
+        try {
+            // 1, Get the DB
+            const db = getDB();
 
-        // 2. Get the collection
-        const collection = db.collection('products');
-
-
+            // 2. Get the collection
+            const collection = db.collection(this.collection);
+            await collection.insertOne(newProduct);
+            return newProduct;
+        } catch(err) {
+            console.log(err);
+            throw new ApplicationError("Something went wrong with database", 500);
+        }
     }
 
     async getAll() {
+        try{
+            const db = getDB();
+            const collection = db.collection(this.collection);
+            const products = await collection.find().toArray();
+            console.log(products);
+            return products;
+        } catch(err) {
+            console.log(err);
+            throw new ApplicationError("Something went wrong with database", 500);
+        }
 
     }
 
-    async get() {
-
+    async get(id) {
+        try{
+            const db = getDB();
+            const collection = db.collection(this.collection);
+            return await collection.findOne({_id: new ObjectId(id)});
+        } catch(err) {
+            console.log(err);
+            throw new ApplicationError("Something went wrong with database", 500);
+        }
     }
 }
+
+export default ProductRepository;
