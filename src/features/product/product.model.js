@@ -4,22 +4,21 @@ import UserModel from "../user/user.model.js";
 export default class ProductModel {
 
     constructor (
-        id,
         name,
         desc,
         price,
         imageUrl,
         category,
-        sizes
+        sizes,
+        id
     ) {
         // initialize all these properties
-        this.id = id;
+        this._id = id;
         this.name = name;
         this.desc = desc;
-        this.price = price;
         this.imageUrl = imageUrl;
         this.category = category;
-        
+        this.price = price;        
         this.sizes = sizes;
     }
 
@@ -30,7 +29,7 @@ export default class ProductModel {
     }
 
     static get(id) {
-      const product = products.find(i => i.id == id);
+      const product = products.find((i) => i.id == id);
       return product;
     }
 
