@@ -35,7 +35,6 @@ import { ApplicationError } from '../../error-handler/applicationError.js'
             console.log(err);
             throw new ApplicationError("Something went wrong with database", 500);
         }
-
     }
 
     async get(id) {
