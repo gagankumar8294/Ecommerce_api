@@ -10,7 +10,7 @@ const ProductRouter = express.Router();
 const productController = new ProductController();
 ProductRouter.get('/filter', (req, res) => {productController.filterProducts(req, res)});
 
-ProductRouter.post('/rate', productController.rateProduct);
+ProductRouter.post('/rate', (req, res) => {productController.rateProduct(req, res)});
 ProductRouter.get('/', (req, res) => {productController.getAllProducts(req, res)});
 ProductRouter.post('/', upload.single('imageUrl'), (req, res) => {productController.addProduct(req, res)});
 ProductRouter.get('/:id',  (req, res) => {productController.getOneProduct(req, res)});

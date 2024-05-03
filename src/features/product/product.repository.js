@@ -73,6 +73,21 @@ import { ApplicationError } from '../../error-handler/applicationError.js'
             throw new ApplicationError("Something went wrong with database", 500);
         }
     }
+
+    async rate(userID, produtID, rating) {
+        try {
+            const db = getDB();
+            const collection = db.collection(this.collection);
+            collection.updateOne({
+                _id: new ObjectId(produtID)
+            }, {
+                $push:{ratings: {userID, rating}}
+            })
+        } catch(err) {
+            console.log(err);
+            throw new ApplicationError("Something went wrong with database", 500);
+        }
+    }
 }
 
 export default ProductRepository;

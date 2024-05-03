@@ -20,7 +20,7 @@ server.use(bodyParser.json())
 server.use(loggerMiddleware);
 
 // for all requests related to products, redirect to product routes.
-server.use('/api/products', productRouter);
+server.use('/api/products',jwtAuth, productRouter);
 server.use('/api/users', userRouter);
 server.use('/api/cart', jwtAuth, cartRouter);
 

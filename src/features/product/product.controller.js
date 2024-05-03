@@ -30,13 +30,11 @@ export default class productController {
     }
 
     rateProduct(req, res, next){
-        console.log(req.query);
-        
         try {
-            const userID = req.query.userID;
+            const userID = req.userID;
             const productID = req.query.productID;
             const rating = req.query.rating;
-            ProductModel.rateProduct(
+            this.productRepository.rateProduct(
                 userID, productID, rating
             );
             return res.status(200).send('Rating has been updated successfully');
