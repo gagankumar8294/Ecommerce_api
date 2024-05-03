@@ -62,7 +62,7 @@ import { ApplicationError } from '../../error-handler/applicationError.js'
             if(category) {
                 filterExpression.category = category
             }
-            collection.find(filterExpression).toArray();
+            return collection.find(filterExpression).toArray();
         } 
         catch(err) {
             console.log(err);
