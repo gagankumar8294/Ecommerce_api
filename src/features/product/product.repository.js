@@ -81,7 +81,7 @@ import { ApplicationError } from '../../error-handler/applicationError.js'
             collection.updateOne({
                 _id: new ObjectId(produtID)
             }, {
-                $push:{ratings: {userID, rating}}
+                $push:{ratings: {userID: new ObjectId(userID), rating}}
             })
         } catch(err) {
             console.log(err);

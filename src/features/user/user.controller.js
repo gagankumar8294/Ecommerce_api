@@ -17,16 +17,16 @@ export default class UserController {
  
     async signIn(req, res, next) {
         try {
-        const result = await this.userRepository.signIn(req.body.email, req.body.password);
-        if(!result){
+        const user = await this.userRepository.signIn(req.body.email, req.body.password);
+        if(!user){
             return res.status(400).send('Incorrect credentials');
         } else {
 
             // 1. create token
             const token = Jwt.sign(
                 {
-                    userID: result.id,
-                    email: result.email,
+                    userID: user._id,
+                    email: user.email,
                 },
                 process.env.JWT_SECRET,
                 {
