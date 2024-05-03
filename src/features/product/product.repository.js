@@ -57,7 +57,11 @@ import { ApplicationError } from '../../error-handler/applicationError.js'
                 filterExpression.price = {$gte: parseFloat(minPrice)}
             }
             if(maxPrice) {
-                filterExpression.price = {$lte: parseFloat(maxPrice)}
+                filterExpression.price = {
+                    // instead of Overwriting it will consider both the statements
+                    ...filterExpression.price,
+                     $lte: parseFloat(maxPrice)
+                    }
             }
             if(category) {
                 filterExpression.category = category
