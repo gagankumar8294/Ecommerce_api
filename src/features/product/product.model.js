@@ -37,22 +37,12 @@ export default class ProductModel {
         return products;
     }
 
-    // Filter
     static filter(minPrice, maxPrice, category) {
-      // Vennila Javascript
       const result = products.filter( (product) => {
         return (
           product.price >= minPrice &&
           product.price <= maxPrice &&
           product.category == category
-          // to adjust price
-          // (!minPrice ||
-          //   product.price >= minPrice &&
-          //   (!maxPrice || 
-          //     product.price <= maxPrice) &&
-          //     (!category ||
-          //       product.category == category)
-          //     )
       );
       });
       return result;
