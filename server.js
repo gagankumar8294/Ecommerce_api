@@ -10,7 +10,7 @@ import cartRouter from "./src/features/cartitems/cartitems.routes.js";
 import loggerMiddleware from "./src/middlewares/logger.middleware.js";
 import { ApplicationError } from "./src/error-handler/applicationError.js";
 import { connectToMongoDB } from "./src/config/mongodb.js";
-
+import { connectusingMongoose } from './src/config/mongooseConfig.js';
 
 // Crate Server
 const server = express();
@@ -43,6 +43,7 @@ server.use((req, res) => {
 
 server.listen( 3200, () => {
     console.log("server listenig on port http://localhost:3200");
-    connectToMongoDB();
+    // connectToMongoDB();
+    connectusingMongoose();
 });
 
